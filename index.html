@@ -8,6 +8,9 @@
         body {
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             background-image: url("background.gif");
             background-repeat: no-repeat;
             background-size: cover;
@@ -38,6 +41,10 @@
         
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        main {
+            flex: 1;
         }
         
         .welcome-section {
@@ -75,12 +82,14 @@
         </nav>
     </header>
 
-    <section class="welcome-section">
-        <h1>Welcome to GamingWorld</h1>
-        <p>Play exciting online browser games and have fun!</p>
-    </section>
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome to GamingWorld</h1>
+            <p>Play exciting online browser games and have fun!</p>
+        </section>
 
-    <!-- Additional sections and content here -->
+        <!-- Additional sections and content here -->
+    </main>
 
     <footer>
         <p>&copy; 2023 GamingWorld. All rights reserved.</p>
