@@ -85,7 +85,11 @@ function changeGameCode(url) {
     var gameSection = document.getElementById("game-section");
     gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 900px; border: none;"></iframe>';
 }
-
+window.addEventListener('DOMContentLoaded', (event) => {
+            const currentYear = new Date().getFullYear();
+            const footerText = document.querySelector('footer p');
+            footerText.innerHTML = '&copy; ' + currentYear + ' GamingWorld. All rights reserved.';
+        });
     </script>
 </head>
 <body>

@@ -69,6 +69,13 @@
             text-align: center;
         }
     </style>
+    <script>
+                window.addEventListener('DOMContentLoaded', (event) => {
+            const currentYear = new Date().getFullYear();
+            const footerText = document.querySelector('footer p');
+            footerText.innerHTML = '&copy; ' + currentYear + ' GamingWorld. All rights reserved.';
+        });
+    </script>
 </head>
 <body>
     <header>
