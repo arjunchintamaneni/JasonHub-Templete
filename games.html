@@ -150,6 +150,21 @@
                 }
             }
         }
+
+        function searchGames() {
+            var input = document.getElementById("search-input");
+            var filter = input.value.toUpperCase();
+            var gameButtons = document.querySelectorAll('.game-section button');
+
+            gameButtons.forEach(function(button) {
+                var gameName = button.textContent || button.innerText;
+                if (gameName.toUpperCase().indexOf(filter) > -1) {
+                    button.style.display = "";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+        }
     </script>
 </head>
 <body>
@@ -166,6 +181,7 @@
         <section class="welcome-section">
             <h1>Games</h1>
             <div class="game-section">
+                <input type="text" id="search-input" oninput="searchGames()" placeholder="Search games">
                 <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html', this)">BAPBAP</button>
                 <button onclick="changeGameCode('Code for Game 2', this)">Game 2</button>
                 <button onclick="changeGameCode('Code for Game 3', this)">Game 3</button>
