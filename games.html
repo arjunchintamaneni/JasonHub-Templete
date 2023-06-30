@@ -89,6 +89,10 @@
             background-color: #0056b3;
         }
         
+        .game-section button.active {
+            background-color: #28a745;
+        }
+        
         .fs-section {
             text-align: center;
         }
@@ -117,9 +121,18 @@
         }
     </style>
     <script>
-        function changeGameCode(url) {
+        function changeGameCode(url, button) {
             var gameSection = document.getElementById("game-section");
             gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe>';
+
+            // Remove the 'active' class from all buttons
+            var buttons = document.querySelectorAll('.game-section button');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked button
+            button.classList.add('active');
         }
 
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -152,11 +165,13 @@
     <main>
         <section class="welcome-section">
             <h1>Games</h1>
-            <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html')">BAPBAP</button>
-            <button onclick="changeGameCode('Code for Game 2')">Game 2</button>
-            <button onclick="changeGameCode('Code for Game 3')">Game 3</button>
-            <button onclick="changeGameCode('Code for Game 4')">Game 4</button>
-            <button onclick="changeGameCode('Code for Game 5')">Game 5</button>
+            <div class="game-section">
+                <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html', this)">BAPBAP</button>
+                <button onclick="changeGameCode('Code for Game 2', this)">Game 2</button>
+                <button onclick="changeGameCode('Code for Game 3', this)">Game 3</button>
+                <button onclick="changeGameCode('Code for Game 4', this)">Game 4</button>
+                <button onclick="changeGameCode('Code for Game 5', this)">Game 5</button>
+            </div>
         </section>
 
         <section id="game-section" class="game-section">
