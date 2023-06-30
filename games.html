@@ -81,15 +81,26 @@
         }
     </style>
     <script>
-function changeGameCode(url) {
-    var gameSection = document.getElementById("game-section");
-    gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe>';
-}
-window.addEventListener('DOMContentLoaded', (event) => {
+        function changeGameCode(url) {
+            var gameSection = document.getElementById("game-section");
+            gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe>';
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
             const currentYear = new Date().getFullYear();
             const footerText = document.querySelector('footer p');
             footerText.innerHTML = '&copy; ' + currentYear + ' GamingWorld. All rights reserved.';
         });
+
+        function openFullscreen() {
+            var iframe = document.querySelector('#game-section iframe');
+            if (iframe) {
+                var url = iframe.getAttribute('src');
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            }
+        }
     </script>
 </head>
 <body>
@@ -116,6 +127,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             <!-- Initial game code -->
             <p>Click on a button above to load a game!</p>
         </section>
+
+        <script>
+            var fullscreenButton = document.createElement('button');
+            fullscreenButton.textContent = 'Fullscreen';
+            fullscreenButton.addEventListener('click', openFullscreen);
+            var gameSection = document.getElementById('game-section');
+            gameSection.appendChild(fullscreenButton);
+        </script>
     </main>
 
     <footer>
