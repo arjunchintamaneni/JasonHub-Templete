@@ -133,6 +133,27 @@
             text-align: center;
         }
         
+        /* New styles for the scroll-down button */
+        #scrollDownButton {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        #scrollDownButton:hover {
+            opacity: 1;
+        }
+        
         /* New styles for the scroll-up button */
         #scrollUpButton {
             background-color: #007bff;
@@ -205,9 +226,8 @@
             gameSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function scrollToButtons() {
-            var welcomeSection = document.querySelector(".welcome-section");
-            welcomeSection.scrollIntoView({ behavior: 'smooth' });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </head>
@@ -215,60 +235,41 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Games</a></li>
+                <li><a href="#welcome-section">Home</a></li>
+                <li><a href="#game-section">Games</a></li>
+                <li><a href="#fs-section">Fullscreen</a></li>
+                <li><a href="#footer">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="welcome-section">
-            <h1>Games</h1>
-            <div class="game-section">
-                <div class="search-section">
-                    <input type="text" id="search-input" oninput="searchGames()" placeholder="Search games">
-                </div>
-                <div class="game-buttons">
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html', this)">BAPBAP</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bloxdhop-io/index.html', this)">Bloxd.io</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/shellshockersio/index.html', this)">Shell Shockers</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/kirka-io/index.html', this)">Kirka.io</button>
-                    <button onclick="changeGameCode('https://1v1.lol/', this)">1v1.lol</button>
-                    <button onclick="window.open('https://now.gg/play/roblox-corporation/5349/roblox', '_blank');">Roblox</button>                      
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/moto-x3m/index.html', this)">Moto X3M</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/clicker-heroes/index.html', this)">Clicker Heroes</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/idle-it-company/index.html', this)">Idle IT Company</button>
-                </div>
-                <div class="scroll-down">
-                    <button id="scrollDownButton" onclick="scrollToGameCode()">&#8595;</button>
-                </div>
-            </div>
+        <section id="welcome-section" class="welcome-section">
+            <h1>Welcome to GamingWorld</h1>
+            <p>Explore a wide range of exciting games!</p>
+            <button id="scrollDownButton" onclick="scrollToGameCode()">Scroll Down</button>
         </section>
 
         <section id="game-section" class="game-section">
-            <!-- Initial game code -->
-            <p>Click on a button above to load a game!</p>
-        </section>
-
-        <section id="scrollup-section" class="scrollup-section">
-            <button id="scrollUpButton" onclick="scrollToButtons()">&#8593;</button>
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="Search games..." onkeyup="searchGames()">
+            </div>
+            <button class="active" onclick="changeGameCode('game1.html', this)">Game 1</button>
+            <button onclick="changeGameCode('game2.html', this)">Game 2</button>
+            <button onclick="changeGameCode('game3.html', this)">Game 3</button>
+            <button onclick="changeGameCode('game4.html', this)">Game 4</button>
         </section>
 
         <section id="fs-section" class="fs-section">
-
+            <button onclick="openFullscreen()">Open Fullscreen</button>
         </section>
-        
-        <script>
-            var fullscreenButton = document.createElement('button');
-            fullscreenButton.textContent = 'Fullscreen';
-            fullscreenButton.addEventListener('click', openFullscreen);
-            var fsSection = document.getElementById('fs-section');
-            fsSection.appendChild(fullscreenButton);
-        </script>
     </main>
 
-    <footer>
+    <footer id="footer">
         <p>&copy; 2023 GamingWorld. All rights reserved.</p>
     </footer>
+
+    <!-- Scroll-up button -->
+    <button id="scrollUpButton" onclick="scrollToTop()">Scroll Up</button>
 </body>
 </html>
