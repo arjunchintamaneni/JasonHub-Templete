@@ -132,6 +132,27 @@
             padding: 20px;
             text-align: center;
         }
+        
+        /* New styles for the scroll-up button */
+        #scrollUpButton {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        #scrollUpButton:hover {
+            opacity: 1;
+        }
     </style>
     <script>
         function changeGameCode(url, button) {
@@ -180,14 +201,14 @@
         }
 
         function scrollToGameCode() {
-    var gameSection = document.getElementById("game-section");
-    gameSection.scrollIntoView({ behavior: 'smooth' });
-  }
+            var gameSection = document.getElementById("game-section");
+            gameSection.scrollIntoView({ behavior: 'smooth' });
+        }
 
-  function scrollToButtons() {
-    var welcomeSection = document.querySelector(".welcome-section");
-    welcomeSection.scrollIntoView({ behavior: 'smooth' });
-  }
+        function scrollToButtons() {
+            var welcomeSection = document.querySelector(".welcome-section");
+            welcomeSection.scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </head>
 <body>
@@ -223,15 +244,15 @@
                 </div>
             </div>
         </section>
-        <section id="scrollup-section" class="game-section">
-            <button id="scrollUpButton" onclick="scrollToButtons()">&#8593;</button>
-        </section>
+
         <section id="game-section" class="game-section">
             <!-- Initial game code -->
             <p>Click on a button above to load a game!</p>
         </section>
 
-
+        <section id="scrollup-section" class="scrollup-section">
+            <button id="scrollUpButton" onclick="scrollToButtons()">&#8593;</button>
+        </section>
 
         <section id="fs-section" class="fs-section">
 
