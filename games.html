@@ -178,6 +178,16 @@
                 }
             });
         }
+
+        function scrollToGameCode() {
+    var gameSection = document.getElementById("game-section");
+    gameSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToButtons() {
+    var welcomeSection = document.querySelector(".welcome-section");
+    welcomeSection.scrollIntoView({ behavior: 'smooth' });
+  }
     </script>
 </head>
 <body>
@@ -208,6 +218,9 @@
                     <button onclick="changeGameCode('https://games.crazygames.com/en_US/clicker-heroes/index.html', this)">Clicker Heroes</button>
                     <button onclick="changeGameCode('https://games.crazygames.com/en_US/idle-it-company/index.html', this)">Idle IT Company</button>
                 </div>
+                <div class="scroll-down">
+                    <button id="scrollDownButton" onclick="scrollToGameCode()">&#8595;</button>
+                </div>
             </div>
         </section>
 
@@ -215,6 +228,10 @@
             <!-- Initial game code -->
             <p>Click on a button above to load a game!</p>
         </section>
+
+<section id="scrollup-section" class="scrollup-section">
+    <button id="scrollUpButton" onclick="scrollToButtons()">&#8593;</button>
+</section>
 
         <section id="fs-section" class="fs-section">
 
