@@ -138,7 +138,7 @@
     <script>
         function changeGameCode(url, button) {
             var gameSection = document.getElementById("game-section");
-            gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe>';
+            gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe> <br> <p>test</p>';
 
             // Remove the 'active' class from all buttons
             var buttons = document.querySelectorAll('.game-section button');
@@ -210,25 +210,26 @@
                     <input type="text" id="search-input" oninput="searchGames()" placeholder="Search games">
                 </div>
                 <div class="game-buttons">
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html', this)">BAPBAP</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bloxdhop-io/index.html', this)">Bloxd.io</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/shellshockersio/index.html', this)">Shell Shockers</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/kirka-io/index.html', this)">Kirka.io</button>
-                    <button onclick="changeGameCode('https://1v1.lol/', this)">1v1.lol</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bapbap/index.html', this); scrollToGameCode()">BAPBAP</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/bloxdhop-io/index.html', this); scrollToGameCode()">Bloxd.io</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/shellshockersio/index.html', this); scrollToGameCode()">Shell Shockers</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/kirka-io/index.html', this); scrollToGameCode()">Kirka.io</button>
+                    <button onclick="changeGameCode('https://1v1.lol/', this); scrollToGameCode()">1v1.lol</button>
                     <button onclick="window.open('https://now.gg/play/roblox-corporation/5349/roblox', '_blank');">Roblox</button>                      
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/moto-x3m/index.html', this)">Moto X3M</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/clicker-heroes/index.html', this)">Clicker Heroes</button>
-                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/idle-it-company/index.html', this)">Idle IT Company</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/moto-x3m/index.html', this); scrollToGameCode()">Moto X3M</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/clicker-heroes/index.html', this); scrollToGameCode()">Clicker Heroes</button>
+                    <button onclick="changeGameCode('https://games.crazygames.com/en_US/idle-it-company/index.html', this); scrollToGameCode()">Idle IT Company</button>
                 </div>
  
             </div>
         </section>
-
+      
 
         <section id="game-section" class="game-section">
             <!-- Initial game code -->
             <p>Click on a button above to load a game!</p>
-</section>
+        </section>
+
        
 
         <section id="fs-section" class="fs-section">
