@@ -136,7 +136,7 @@
     <script>
         function changeGameCode(url, button) {
             var gameSection = document.getElementById("game-section");
-            gameSection.innerHTML = '<iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe> <br> <button class="fs-section" onclick="scrollToButtons()">Menu</button> <button class="fs-section" onclick="openFullscreen()">Fullscreen</button>';
+            gameSection.innerHTML = '<button class="fs-section" onclick="scrollToGameCode()">BAPBAP</button> <br> <iframe src="' + url + '" style="width: 100%; height: 800px; border: none;"></iframe> <br> <button class="fs-section" onclick="scrollToButtons()">Menu</button> <button class="fs-section" onclick="openFullscreen()">Fullscreen</button>';
 
             // Remove the 'active' class from all buttons
             var buttons = document.querySelectorAll('.game-section button');
