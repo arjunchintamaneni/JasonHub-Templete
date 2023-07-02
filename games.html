@@ -132,8 +132,6 @@
             padding: 20px;
             text-align: center;
         }
-
-
     </style>
     <script>
         function changeGameCode(url, button) {
@@ -230,19 +228,9 @@
             <p>Click on a button above to load a game!</p>
         </section>
 
-       
-
-        <section id="fs-section" class="fs-section">
-
+        <section class="fs-section">
+            <button onclick="openFullscreen()">Fullscreen</button>
         </section>
-        
-        <script>
-            var fullscreenButton = document.createElement('button');
-            fullscreenButton.textContent = 'Fullscreen';
-            fullscreenButton.addEventListener('click', openFullscreen);
-            var fsSection = document.getElementById('fs-section');
-            fsSection.appendChild(fullscreenButton);
-        </script>
     </main>
 
     <footer>
